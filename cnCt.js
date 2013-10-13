@@ -2,7 +2,7 @@
  * @name cnCt
  * @version 0.0.3
  * @description cnCt — JavaScript client template engine
- * @license GNU GPL (license.txt)
+ * @license MIT (license.txt)
  * @author Dmitry Makhnev, SoftWearFinance LLC
  * © SoftWearFinance LLC (http://softwearfinance.com/), Dmitry Makhnev (https://github.com/DmitryMakhnev)
  */
