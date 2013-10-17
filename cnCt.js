@@ -25,7 +25,7 @@
         var i;
         if (typeof needNodesName === 'string'){
             if (needNodesName in needNodes){
-                if (isArray(needNodesName[needNodes])){
+                if (isArray(needNodes[needNodesName])){
                     needNodes[needNodesName].push($DOMNode);
                 } else{
                     needNodes[needNodesName] = [needNodes[needNodesName], $DOMNode];
