@@ -7,11 +7,10 @@
  * © SoftWearFinance LLC (http://softwearfinance.com/), Dmitry Makhnev (https://github.com/DmitryMakhnev)
  */
 
-(function(_window){
+(function(_window, _document){
     var cnCt,
         _templatesList,
         u,
-        _document = document,
         abstractDIV = _document.createElement('div'),
         isArray = Array.isArray !== u ?
             function(essenceForTest){
@@ -60,8 +59,6 @@
             }
         }
     }
-
-    [].push();
 
     _window.cnCt = cnCt = {
         version: '0.0.3',
@@ -204,4 +201,4 @@
         }
     };
 
-}(window));
+}(window, document));
