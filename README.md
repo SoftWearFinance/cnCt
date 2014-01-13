@@ -154,4 +154,4 @@ result4 = cnCt.tp('micro', document.body);
 
 [MIT](https://github.com/SoftWearFinance/cnCt/blob/master/license.txt)
 
-© 2013 [SoftWearFinance LLC](http://softwearfinance.com/), [Dmitry Makhnev](https://github.com/DmitryMakhnev/)
+© 2013‒2014 [SoftWearFinance LLC](http://softwearfinance.com/), [Dmitry Makhnev](https://github.com/DmitryMakhnev/)

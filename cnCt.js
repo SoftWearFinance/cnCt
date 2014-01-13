@@ -88,7 +88,11 @@
          * @returns {boolean}
          */
         isDOMObject: function(essenceForTest){
-            return (essenceForTest !== u) && (essenceForTest !== null) && ('nodeName' in essenceForTest);
+            return (essenceForTest !== u)
+                && (essenceForTest !== null)
+                && (typeof essenceForTest !== 'string')
+                && (typeof essenceForTest !== 'number')
+                && ('nodeName' in essenceForTest);
         },
         /**
          * create DOM node from cnCt DOM node descriptor
