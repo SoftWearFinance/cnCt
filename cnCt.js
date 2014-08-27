@@ -65,7 +65,7 @@
         /**
          * create DOM from HTML str
          * @param {String} htmlStr
-         * @param {optional|HTMLElement} $parent DOM node for paste result HTML
+         * @param {HTMLElement} [$parent] DOM node for paste result HTML
          * @returns {HTMLElement} if ($parent) $parent
          *                        else documentFragment instance with paste result HTML
          */
@@ -97,7 +97,7 @@
         /**
          * create DOM node from cnCt DOM node descriptor
          * @param {Object} elementDescriptor cnCt DOM node descriptor
-         * @param {optional|HTMLElement} $parent DOM node for paste result
+         * @param {HTMLElement} [$parent] DOM node for paste result
          * @returns {HTMLElement} result DOM node
          */
         createElement: function(elementDescriptor, $parent){
@@ -151,10 +151,11 @@
         /**
          * create fragment DOM tree from cnCt DOM nodes descriptor
          * @param {Object|Array} elementsDescriptor cnCt DOM nodes descriptor
-         * @param {optional|HTMLElement} $parent DOM node for paste result
-         * @returns {{r: *, *: []}} if (elementsDescriptor is Array) {r: documentFragment instance with generated nodes, ...[n1]: *, ...[n2]: *, }
+         * @param {HTMLElement} [$parent] DOM node for paste result
+         * @returns {Object} {r: HTMLElement|DocumentFragment, *: []} if (elementsDescriptor is Array) {r: documentFragment instance with generated nodes, ...[n1]: *, ...[n2]: *, }
          *                          else {r: main elementsDescriptor DOM node, ...[n1]: *, ...[n2]: *, }
          */
+
         createElements: function (elementsDescriptor, $parent){
             var needNodes = {
                 r: u
@@ -185,11 +186,11 @@
         },
         /**
          * simple cnCt method
-         * @param {function|string} template if (typeof template === 'string') cnCt get templatesList bind of bindTemplates method and call templatesList[template]
+         * @param {Function|String} template if (typeof template === 'string') cnCt get templatesList bind of bindTemplates method and call templatesList[template]
          *                                   else call template
-         * @param {optional|*} data data for template function, if (data is DOMNode) $parent = data
-         * @param {optional|HTMLElement} $parent DOM node for paste result
-         * @returns {{r: *, *: []}} if (elementsDescriptor is Array) {r: documentFragment instance with generated nodes, ...[n1]: *, ...[n2]: *, }
+         * @param {*} [data] data for template function, if (data is DOMNode) $parent = data
+         * @param {HTMLElement} [$parent] DOM node for paste result
+         * @returns {Object} {r: HTMLElement|DocumentFragment, *: []} if (elementsDescriptor is Array) {r: documentFragment instance with generated nodes, ...[n1]: *, ...[n2]: *, }
          *                          else {r: main elementsDescriptor DOM node, ...[n1]: *, ...[n2]: *, }
          */
         tp: function(template, data, $parent){
