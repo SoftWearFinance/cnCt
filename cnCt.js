@@ -6,8 +6,16 @@
  * @author Dmitry Makhnev, SoftWearFinance LLC
  * © SoftWearFinance LLC (http://softwearfinance.com/), Dmitry Makhnev (https://github.com/DmitryMakhnev)
  */
+(function(_window, factory){
 
-(function(_window, _document){
+    // export as module for CommonJS and CommonJS-like environments
+	if ((typeof module === "object") && (typeof module.exports === "object")) {
+		module.exports = factory(_window, _window.document);
+	} else {
+		factory(_window, _window.document, true);
+	}
+
+}(window, function(_window, _document, isGlobal){
     var cnCt,
         _templatesList,
         u,
@@ -60,7 +68,7 @@
         }
     }
 
-    _window.cnCt = cnCt = {
+    cnCt = {
         version: '0.0.3',
         /**
          * create DOM from HTML str
@@ -205,4 +213,10 @@
         }
     };
 
-}(window, document));
+    if (isGlobal){
+        _window.cnCt = cnCt;
+    }
+
+    return cnCt;
+
+}));
